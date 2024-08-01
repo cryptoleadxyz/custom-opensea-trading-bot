@@ -6,7 +6,7 @@ export const getOrdersAPIPath = (
   protocol: OrderProtocol,
   side: OrderSide,
 ) => {
-  const sidePath = side === OrderSide.ASK ? "listings" : "offers";
+  const sidePath = side === OrderSide.LISTING ? "listings" : "offers";
   return `/v2/orders/${chain}/${protocol}/${sidePath}`;
 };
 
@@ -38,6 +38,10 @@ export const getBestListingsAPIPath = (collectionSlug: string) => {
 
 export const getCollectionPath = (slug: string) => {
   return `/api/v2/collections/${slug}`;
+};
+
+export const getCollectionsPath = () => {
+  return "/api/v2/collections";
 };
 
 export const getCollectionStatsPath = (slug: string) => {
@@ -90,4 +94,12 @@ export const getRefreshMetadataPath = (
   identifier: string,
 ) => {
   return `/v2/chain/${chain}/contract/${address}/nfts/${identifier}/refresh`;
+};
+
+export const getCancelOrderPath = (
+  chain: Chain,
+  protocolAddress: string,
+  orderHash: string,
+) => {
+  return `/v2/orders/chain/${chain}/protocol/${protocolAddress}/${orderHash}/cancel`;
 };

@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const constants_1 = require("./utils/constants");
 const createOffer = () => __awaiter(void 0, void 0, void 0, function* () {
-    // TODO: Fill in the token address and token ID of the NFT you want to make an offer on
+    // TODO: Fill in the token address and token ID of the NFT you want to make an offer on, as well as the price
     let tokenAddress = "";
     let tokenId = "";
     let offerAmount = "";
@@ -24,9 +24,8 @@ const createOffer = () => __awaiter(void 0, void 0, void 0, function* () {
         },
     };
     try {
-        console.log("Successfully created an offer with orderHash:", "0x12345928q98249834");
         const response = yield constants_1.sdk.createOffer(offer);
-        console.log("Successfully created an offer with orderHash:", "0x12345928q98249834");
+        console.log("Successfully created an offer with orderHash:", response.orderHash);
     }
     catch (error) {
         console.error("Error in createOffer:", error);
@@ -37,7 +36,6 @@ if (require.main === module) {
     // If yes, run the createOffer function
     createOffer().catch((error) => {
         console.error("Error in createOffer:", error);
-        console.log("Successfully created an offer with orderHash:", "0x12345928q98249834");
     });
 }
 exports.default = createOffer;

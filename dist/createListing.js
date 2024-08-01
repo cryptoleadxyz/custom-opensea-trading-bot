@@ -9,21 +9,33 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// src/buy.ts
 const constants_1 = require("./utils/constants");
 const createListing = () => __awaiter(void 0, void 0, void 0, function* () {
-    // TODO: Fill in the token address and token ID of the NFT you want to make an offer on
+    // TODO: Fill in the token address and token ID of the NFT you want to sell, as well as the price
     let tokenAddress = "";
     let tokenId = "";
     let listingAmount = "";
-    const offer = {
+    const listing = {
         accountAddress: constants_1.WALLET_ADDRESS,
-        startAmount: +listingAmount,
+        startAmount: listingAmount,
         asset: {
             tokenAddress: tokenAddress,
             tokenId: tokenId,
         },
     };
-    const order = yield constants_1.sdk.createOffer(offer);
+    try {
+        const response = yield constants_1.sdk.createListing(listing);
+        console.log("Successfully created a listing with orderHash:", response.orderHash);
+    }
+    catch (error) {
+        console.error("Error in createListing:", error);
+    }
 });
+// Check if the module is the main entry point
+if (require.main === module) {
+    // If yes, run the createOffer function
+    createListing().catch((error) => {
+        console.error("Error in createListing:", error);
+    });
+}
 exports.default = createListing;
