@@ -14,7 +14,7 @@ const createOffer = () => __awaiter(void 0, void 0, void 0, function* () {
     // TODO: Fill in the token address and token ID of the NFT you want to make an offer on, as well as the price
     let tokenAddress = "0xe29f8038d1a3445ab22ad1373c65ec0a6e1161a4";
     let tokenId = "316";
-    let offerAmount = "0.000001";
+    let offerAmount = "0.000000000001";
     const offer = {
         accountAddress: constants_1.WALLET_ADDRESS,
         startAmount: offerAmount,
