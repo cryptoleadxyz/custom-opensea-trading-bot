@@ -7,7 +7,8 @@
     "build": "tsc",
     "createListing": "ts-node src/createListing.ts",
     "createOffer": "ts-node src/createOffer.ts",
-    "createCollectionOffer": "ts-node src/createCollectionOffer.ts"
+    "createCollectionOffer": "ts-node src/createCollectionOffer.ts",
+    "createTraitOffer": "ts-node src/createTraitOffer.ts"
   },
   "repository": {
     "type": "git",
