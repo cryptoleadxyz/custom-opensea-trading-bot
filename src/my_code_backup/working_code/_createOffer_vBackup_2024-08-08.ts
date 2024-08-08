@@ -1,4 +1,4 @@
-import { WALLET_ADDRESS, sdk } from "./utils/constants";
+// import { WALLET_ADDRESS, sdk } from "./utils/constants";
 
 const createOffer = async () => {
   // TODO: Fill in the token address and token ID of the NFT you want to make an offer on, as well as the price
@@ -8,7 +8,7 @@ const createOffer = async () => {
   let expirationTime: number = Math.round(Date.now() / 1000 + 10 * 60); // denominator can be configured as in second, min, hour, etc...
 
   const offer = {
-    accountAddress: WALLET_ADDRESS,
+    //accountAddress: WALLET_ADDRESS,
     startAmount: offerAmount,
     expirationTime: expirationTime,
     asset: {
@@ -18,10 +18,10 @@ const createOffer = async () => {
   };
 
   try {
-    const response = await sdk.createOffer(offer);
+    //const response = await sdk.createOffer(offer);
     console.log(
       "Successfully created an offer with orderHash:",
-      response.orderHash
+      //response.orderHash
     );
   } catch (error) {
     console.error("Error in createOffer:", error);

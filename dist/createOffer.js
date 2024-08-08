@@ -12,9 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const constants_1 = require("./utils/constants");
 const createOffer = () => __awaiter(void 0, void 0, void 0, function* () {
     // TODO: Fill in the token address and token ID of the NFT you want to make an offer on, as well as the price
-    let tokenAddress = "0xe29f8038d1a3445ab22ad1373c65ec0a6e1161a4"; // the nft collection contract address
-    let tokenId = "166"; // specific token id from the collection
-    let offerAmount = "0.0001"; // in eth
+    let tokenAddress = "0x282BDD42f4eb70e7A9D9F40c8fEA0825B7f68C5D"; // the nft collection contract address
+    let tokenId = "2130"; // specific token id from the collection
+    let offerAmount = "0.005"; // in eth
     let expirationTime = Math.round(Date.now() / 1000 + 10 * 60); // denominator can be configured as in second, min, hour, etc...
     const offer = {
         accountAddress: constants_1.WALLET_ADDRESS,

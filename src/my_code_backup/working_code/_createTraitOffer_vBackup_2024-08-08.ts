@@ -1,4 +1,4 @@
-import { WALLET_ADDRESS, sdk } from "./utils/constants";
+// import { WALLET_ADDRESS, sdk } from "./utils/constants";
 import { BigNumberish, ethers } from "ethers";
 
 const createTraitOffer = async () => {
@@ -18,7 +18,7 @@ const createTraitOffer = async () => {
     "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"; // WETH address on Sepolia, replace as needed
 
   const TraitOffer = {
-    accountAddress: WALLET_ADDRESS,
+    //accountAddress: WALLET_ADDRESS,
     collectionSlug: collectionSlug,
     amount: offerAmount,
     expirationTime: expirationTime,
@@ -30,7 +30,7 @@ const createTraitOffer = async () => {
   };
 
   try {
-    const response = await sdk.createCollectionOffer(TraitOffer);
+    //const response = await sdk.createCollectionOffer(TraitOffer);
     console.log(
       "Successfully created an offer with orderHash:"
       // response.orderHash [] not sure they this throws an error

@@ -3,19 +3,19 @@ import { BigNumberish, ethers } from "ethers";
 
 const createTraitOffer = async () => {
   // TODO: Fill in the token address and token ID of the NFT you want to make an offer on, as well as the price
-  let collectionSlug: string = "boredapeyachtclubsepolia";
+  let collectionSlug: string = "official-v1-punks";
   let excludeOptionalCreatorFees: boolean = true;
   //let tokenAddress: string = "0xe29f8038d1a3445ab22ad1373c65ec0a6e1161a4";
   //let tokenId: string = "166";
 
   let quantity: number = 1;
-  let offerAmount: string = "0.0003"; // in eth
+  let offerAmount: string = "0.0044"; // in eth
   let expirationTime: number = Math.round(Date.now() / 1000 + 10 * 60); // denominator can be configured as in second, min, hour, etc...
-  let traitType: string = "fur";
-  let traitValue: string = "zombie";
+  let traitType: string = "eyes";
+  let traitValue: string = "3d glasses";
 
   const paymentTokenAddress: string =
-    "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"; // WETH address on Sepolia, replace as needed
+    "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"; // WETH address on Mainnet, replace as needed
 
   const TraitOffer = {
     accountAddress: WALLET_ADDRESS,
