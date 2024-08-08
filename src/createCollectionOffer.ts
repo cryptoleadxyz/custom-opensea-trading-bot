@@ -1,4 +1,5 @@
 import { WALLET_ADDRESS, sdk } from "./utils/constants";
+import { BigNumberish, ethers } from "ethers";
 
 const createCollectionOffer = async () => {
   // TODO: Fill in the token address and token ID of the NFT you want to make an offer on, as well as the price
@@ -8,27 +9,27 @@ const createCollectionOffer = async () => {
   //let tokenId: string = "166";
 
   let quantity: number = 1;
-  let offerAmount: string = "0.0001"; // in eth
+  let offerAmount: string = "0.0005"; // in eth
   let expirationTime: number = Math.round(Date.now() / 1000 + 10 * 60); // denominator can be configured as in second, min, hour, etc...
+
+  const paymentTokenAddress: string =
+    "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"; // WETH address on Sepolia, replace as needed
 
   const collectionOffer = {
     accountAddress: WALLET_ADDRESS,
-    startAmount: offerAmount,
+    collectionSlug: collectionSlug,
+    amount: offerAmount,
     expirationTime: expirationTime,
-    asset: {
-      // tokenAddress: tokenAddress,
-      // tokenId: tokenId,
-      quantity: quantity,
-      collectionSlug: collectionSlug,
-      excludeOptionalCreatorFees: excludeOptionalCreatorFees,
-    },
+    quantity: quantity,
+    excludeOptionalCreatorFees: excludeOptionalCreatorFees,
+    paymentTokenAddress: paymentTokenAddress,
   };
 
   try {
     const response = await sdk.createCollectionOffer(collectionOffer);
     console.log(
-      "Successfully created an offer with orderHash:",
-      response.orderHash
+      "Successfully created an offer with orderHash:"
+      // response.orderHash [] not sure they this throws an error
     );
   } catch (error) {
     console.error("Error in createCollectionOffer:", error);

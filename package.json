@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "createListing": "ts-node src/createListing.ts",
-    "createOffer": "ts-node src/createOffer.ts"
+    "createOffer": "ts-node src/createOffer.ts",
+    "createCollectionOffer": "ts-node src/createCollectionOffer.ts"
   },
   "repository": {
     "type": "git",
