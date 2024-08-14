@@ -11,8 +11,8 @@ const createTraitOffer = async () => {
   let quantity: number = 1;
   let offerAmount: string = "0.0044"; // in eth
   let expirationTime: number = Math.round(Date.now() / 1000 + 10 * 60); // denominator can be configured as in second, min, hour, etc...
-  let traitType: string = "eyes";
-  let traitValue: string = "3d glasses";
+  let traitType: string = "hat";
+  let traitValue: string = "top hat";
 
   const paymentTokenAddress: string =
     "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"; // WETH address on Mainnet, replace as needed
@@ -32,8 +32,8 @@ const createTraitOffer = async () => {
   try {
     const response = await sdk.createCollectionOffer(TraitOffer);
     console.log(
-      "Successfully created an offer with orderHash:"
-      // response.orderHash [] not sure they this throws an error
+      "Successfully created an offer with orderHash:",
+      response //response.orderHash // [] not sure they this throws an error
     );
   } catch (error) {
     console.error("Error in createTraitOffer:", error);

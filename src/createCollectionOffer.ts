@@ -28,8 +28,8 @@ const createCollectionOffer = async () => {
   try {
     const response = await sdk.createCollectionOffer(collectionOffer);
     console.log(
-      "Successfully created an offer with orderHash:"
-      // response.orderHash [] not sure they this throws an error
+      "Successfully created an offer with orderHash:",
+      response // response.orderHash [] not sure they this throws an error
     );
   } catch (error) {
     console.error("Error in createCollectionOffer:", error);
